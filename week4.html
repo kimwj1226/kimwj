@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WEEK 4 </title>
+    <script>
+       function register(){this.nStudent++;}
+       function unregister(){this.nStudent--;}
+       function getStudentCount(){return this.nStudent;}    
+       function subject3(korName,engName,classCode){
+        this.korName=korName;
+        this.engName=engName;
+        this.classCode=classCode;
+        this.nStudent=0;
+        this.register = function(){this.nStudent++;}
+        this.unregister=function(){this.nStudent--;}
+        this.getStudentCount=function(){return this.nStudent;}
+       }
+
+       let sub1 = new Object();
+       sub1.korName="웹프로그래밍";
+       sub1.engName="Web Programming"; 
+       sub1.classCode="V024003";
+       sub1.nStudent=0;
+       sub1.register=register;
+       sub1.unregister=unregister;
+       sub1.getStudentCount=getStudentCount;    
+   
+       let sub2 = {
+            korName : "웹프로그래밍",
+            engName : "Web Programming",
+            classCode : "V024003",
+            nStudent : 0,
+
+            register : function (){this.nStudent++;},
+            unregister : function (){this.nStudent--;},
+            getStudentCount : function (){return this.nStudent;}
+
+        };
+
+    </script>
+</head>
+<body>
+    <h2>1. 직접객체만들기</h2>
+    <script>
+        document.write("교과목 이름 = "+sub1.korName+"<br>");
+        document.write("교과목 영문 이름 = "+sub1.engName+"<br>");
+        document.write("등록학생수 = "+sub1.getStudentCount()+"<br>");
+        sub1.register();
+        document.write("after register, 등록학생수 = "+ sub1.getStudentCount());
+    </script>
+    <hr>
+
+    <h2><strong>2. 리터럴 표기법</strong></h2>
+    <script>
+        document.write("교과목 이름 = "+sub2.korName+"<br>");
+        document.write("교과목 영문 이름 = "+sub2.engName+"<br>");
+        document.write("등록 학생 수 = "+sub2.getStudentCount()+"<br>");
+        sub2.register();
+        document.write("after register, 등록 학생 수 = "+sub2.getStudentCount()+"<br>");
+    </script>
+    <hr>
+
+    <h2>3. Prototype</h2>
+    <script>
+        let Subject3 =new subject3("웹프로그래밍","WebProgramming","V024003");
+        document.write("교과목 이름 = "+Subject3.engName+"<br>");
+        document.write("교과목 영문 이름 = "+sub3.engName+"<br>");
+        document.write("등록 학생 수 = "+Subject3.getStudentCount()+"<br>");
+        Subject3.register();
+        document.write("after register, 등록 학생 수 = "+Subject3.getStudentCount()+"<br>");
+
+    </script>
+    <hr>
+</body>
+</html>
