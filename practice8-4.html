@@ -3,21 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>연습문제8-6</title>
-    <script>
-
-        function que(){
-            let text = prompt("HTML 텍스트 혹은 그냥 텍스트를 입력하세요.");
-            let p = document.getElementById('p');
-            p.innerHTML=text;
-        }
-
-    </script>
+    <title>연습문제8-4</title>
 </head>
 <body>
-    <h3>innerHTML</h3><hr>
-    <p id='p' onclick="que()">
-        이번 여름에는 어디로 여행을 갈까요?
-    </p>
+    <h3>계산해봅시다.</h3>
+    <hr>
+    <p>2 + 4 = <span onclick="this.innerHTML= eval(2+4)">답</span></p>
+    <p>4 * 20 + 64 = <span onclick="this.innerHTML = eval(4*20+40)">답</span></p>
+    <p>20 / 5 - 8 * 2 = <span onclick="this.innerHTML = eval(20/5-8*2)">답</span></p>
 </body>
 </html>
