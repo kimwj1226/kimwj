@@ -3,23 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>연습문제8-9</title>
+    <title>연습문제8-6</title>
     <script>
         function add(){
-            let text = prompt("라면 끓이는 순서를 입력하라");
-            let li = document.createElement("li");
-            li.innerHTML=text
-            let a = document.getElementById("a");
-            a.appendChild(li);
+            let text = prompt("HTML 텍스트 혹은 그냥 텍스트를 입력하세요.");
+            let p = document.getElementById('p');
+            p.innerHTML=text;
         }
-        
     </script>
+    
 </head>
 <body>
-    <h3>라면을 끓이는 순서</h3>
-    <hr>
-    <ol  id="a" type="1" style="background-color: yellowgreen;" onclick="add();">
-        <li>물을 끓인다.</li>
-    </ol>
+    <h3>innerHTML</h3><hr>
+    <p id='p' onclick="add()">이번 여름에는 어디로 여행을 갈까요?</p>
 </body>
 </html>
